@@ -1,0 +1,54 @@
+{
+  "manifest_version": 2,
+  "name": "Chrom Multi-Account Containers",
+  "version": "1.0.0",
+  "incognito": "not_allowed",
+  "description": "Multi-Account Containers for Google Chrome helps you keep all the parts of your online life contained in different tabs. Custom labels and color-coded tabs help keep different activities — like online shopping, travel planning, or checking work email — separate.",
+  "applications": {
+    "gecko": {
+      "id": "@chrome-multiaccount-containers",
+      "strict_min_version": "71.0"
+    }
+  },
+  "homepage_url": "https://github.com/savannahar68/multi-account-containers-chrome",
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "cookies",
+    "contextMenus",
+    "contextualIdentities",
+    "history",
+    "idle",
+    "management",
+    "storage",
+    "tabs",
+    "webRequestBlocking",
+    "webRequest"
+  ],
+  "optional_permissions": ["bookmarks"],
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "img/multiaccountcontainer-16.svg",
+    "default_title": "Multi-Account Containers",
+    "default_popup": "popup.html",
+    "theme_icons": [
+      {
+        "light": "img/multiaccountcontainer-16-dark.svg",
+        "dark": "img/multiaccountcontainer-16.svg",
+        "size": 32
+      }
+    ]
+  },
+  "background": {
+    "page": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content-script.js"],
+      "css": ["css/content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": ["/img/container-site-d-24.png"]
+}
