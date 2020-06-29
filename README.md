@@ -1,4 +1,6 @@
-# Multi Account Containers for Chrome
+# Multi Account Containers for Chrome (On HOLD)
+
+On Hold - There's no api like contextualIdentities in chrome, so thinking ways of implementing cookie factory.
 
 Replicating the famous [Multi-Account-Container addon](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/) for chrome.
 
